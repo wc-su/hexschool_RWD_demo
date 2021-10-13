@@ -67,6 +67,14 @@ img {
           box-sizing: border-box;
 }
 
+input {
+  border-radius: 0;
+}
+
+input[type="search"] {
+  -webkit-appearance: none;
+}
+
 h2 {
   font-size: 24px;
 }
