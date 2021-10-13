@@ -1,0 +1,16 @@
+// mixin
+@import "mixins/hide-text";
+@import "mixins/grid";
+
+// 變數
+
+// 字體
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500;900&family=Roboto:wght@100;900&display=swap');
+
+@import "reset";
+@import "layout"; // 架構
+
+@import "page/style"; // 首頁
+@import "page/login"; // 登入
+@import "page/register"; // 註冊
+@import "page/cart"; // 購物車
