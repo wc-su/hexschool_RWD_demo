@@ -50,20 +50,3 @@ table {
 a{
 	text-decoration: none;
 }
-
-img{
-	max-width: 100%;
-	height: auto;
-}
-
-*,*::before,*::after{
-	box-sizing: border-box;
-}
-
-input {
-	border-radius: 0;
-}
-  
-input[type="search"] {
-	-webkit-appearance: none;
-}
