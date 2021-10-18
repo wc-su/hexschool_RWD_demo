@@ -33,13 +33,13 @@
         <div class="header">
             <div class="header-bar">
                 <a href="index.html" class="header-logo">六角西餐廳</a>
-                <i class="fas fa-bars header-bar-m"></i>
-                <ul class="nav-menu">
-                    <i class="far fa-times-circle header-bar-m-close"></i>
-                    <li class="nav-item-home">
+                <i class="fas fa-bars header-menu-icon"></i>
+                <ul class="header-menu">
+                    <i class="far fa-times-circle header-menu-close-icon"></i>
+                    <li class="header-menu-home">
                         <i class="fas fa-sort-up"></i>
                         <a href="index.html">首頁</a>
-                        <ul class="nav-item-h-list">
+                        <ul class="header-menu-home-droplist">
                             <li><a href="#feature" class="scrollTarget">特色</a></li>
                             <li><a href="#today-chef" class="scrollTarget">主廚</a></li>
                             <li><a href="#opinion" class="scrollTarget">評價</a></li>
@@ -61,47 +61,45 @@
             </div>
         </div>
         <div class="login">
-            <div class="login-title">六角西餐廳</div>
+            <h2 class="login-title">六角西餐廳</h2>
             <h3>享受美食好味道</h3>
             <form class="login-info" action="login.html">
                 <h4>LOGIN</h4>
-                <div>
-                    <label for="email">Email Address*</label>
-                    <div class="inputIcon" data-icon="&#xf0e0">
-                        <input type="email" name="email" required>
-                    </div>
+                <label for="email">Email Address*</label>
+                <div class="inputIcon" data-icon="&#xf0e0">
+                    <input type="email" name="email" id="email" required>
                 </div>
-                <div>
-                    <label for="password">Password*</label>
-                    <div class="inputIcon" data-icon="&#xf023">
-                        <input type="text" name="password" required>
-                    </div>
+                <label for="password">Password*</label>
+                <div class="inputIcon" data-icon="&#xf023">
+                    <input type="text" name="password" id="password" required>
                 </div>
                 <a class="forget-password" href="#">忘記密碼？</a>
-                <div class="btn">
-                    <a class="register" href="register.html">註冊</a>
+                <div class="login-btn">
+                    <a href="register.html">註冊</a>
                     <input type="submit" value="登入">
                 </div>
             </form>
         </div>
         <div class="footer">
-            <div class="footer-info">
-                <h2>關於 六角西餐廳</h2>
-                <p>Curabitur lobortis id lorem id bibndum. Ut id consectetur magna. Quisque volutpat augue enim, pulvinar lobortis nibh lacinia at.</p>
-            </div>
-            <div class="footer-info">
-                <h2>聯絡方式</h2>
-                <ul>
-                    <li>高雄市中正五路到底</li>
-                    <li>+886 886 886</li>
-                    <li>service@hexschool.com</li>
-                </ul>
-            </div>
-            <div class="footer-info">
-                <div>六角西餐廳</div>
-                <ul class="social-link">
-                </ul>
-            </div>
+            <ul>
+                <li>
+                    <h3>關於 六角西餐廳</h3>
+                    <p>Curabitur lobortis id lorem id bibndum. Ut id consectetur magna. Quisque volutpat augue enim, pulvinar lobortis nibh lacinia at.</p>
+                </li>
+                <li>
+                    <h3>聯絡方式</h3>
+                    <ul>
+                        <li>高雄市中正五路到底</li>
+                        <li>+886 886 886</li>
+                        <li>service@hexschool.com</li>
+                    </ul>
+                </li>
+                <li>
+                    <div>六角西餐廳</div>
+                    <!-- 內容由 js 新增 -->
+                    <ul class="social-link"></ul>
+                </li>
+            </ul>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

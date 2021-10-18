@@ -33,13 +33,13 @@
         <div class="header">
             <div class="header-bar">
                 <a href="index.html" class="header-logo">六角西餐廳</a>
-                <i class="fas fa-bars header-bar-m"></i>
-                <ul class="nav-menu">
-                    <i class="far fa-times-circle header-bar-m-close"></i>
-                    <li class="nav-item-home">
+                <i class="fas fa-bars header-menu-icon"></i>
+                <ul class="header-menu">
+                    <i class="far fa-times-circle header-menu-close-icon"></i>
+                    <li class="header-menu-home">
                         <i class="fas fa-sort-up"></i>
                         <a href="index.html">首頁</a>
-                        <ul class="nav-item-h-list">
+                        <ul class="header-menu-home-droplist">
                             <li><a href="#feature" class="scrollTarget">特色</a></li>
                             <li><a href="#today-chef" class="scrollTarget">主廚</a></li>
                             <li><a href="#opinion" class="scrollTarget">評價</a></li>
@@ -63,9 +63,9 @@
         <div class="main">
             <div class="feature" id="feature">
                 <div class="feature-title">
-                    <h3 class="line"></h3>
+                    <div class="line"></div>
                     <h3>客人總是在詢問<br/>這麼好吃的秘訣是什麼</h3>
-                    <h3 class="line"></h3>
+                    <div class="line"></div>
                 </div>
                 <ul class="feature-list">
                     <li class="feature-item animated">
@@ -101,7 +101,7 @@
                         <div class="opinion-msg">
                             <h4>高雄一口吃</h4>
                             <p>自從吃了這家餐廳以後，我口水連續流了一個多月都沒停，下次不要再被我遇到，不然我一定連他們桌子都啃下去。</p>
-                            <p class="nickname"> -- 產品經理</p>
+                            <p class="opinion-nickname"> -- 產品經理</p>
                         </div>
                     </div>
                     <div class="opinion-item animated">
@@ -109,7 +109,7 @@
                         <div class="opinion-msg">
                             <h4>廟口小霸王</h4>
                             <p>自從吃了這家餐廳以後，我口水連續流了一個多月都沒停，下次不要再被我遇到，不然我一定連他們桌子都啃下去。</p>
-                            <p class="nickname"> -- 金身道士</p>
+                            <p class="opinion-nickname"> -- 金身道士</p>
                         </div>
                     </div>
                     <div class="opinion-item animated">
@@ -117,7 +117,7 @@
                         <div class="opinion-msg">
                             <h4>春天也來了</h4>
                             <p>自從吃了這家餐廳以後，我口水連續流了一個多月都沒停，下次不要再被我遇到，不然我一定連他們桌子都啃下去。</p>
-                            <p class="nickname"> -- 美麗萬分</p>
+                            <p class="opinion-nickname"> -- 美麗萬分</p>
                         </div>
                     </div>
                 </div>
@@ -127,7 +127,7 @@
                 <div class="location-input">
                     <a href="#"></a>
                     <form action="index.html">
-                        <div class="form-block">
+                        <div class="form-input">
                             <label for="name">姓名</label>
                             <input type="text" name="name" id="name" placeholder="六角講師吃尾牙">
                             <label for="tel">電話</label>
@@ -153,23 +153,25 @@
             </div>
         </div>
         <div class="footer">
-            <div class="footer-info">
-                <h2>關於 六角西餐廳</h2>
-                <p>Curabitur lobortis id lorem id bibndum. Ut id consectetur magna. Quisque volutpat augue enim, pulvinar lobortis nibh lacinia at.</p>
-            </div>
-            <div class="footer-info">
-                <h2>聯絡方式</h2>
-                <ul>
-                    <li>高雄市中正五路到底</li>
-                    <li>+886 886 886</li>
-                    <li>service@hexschool.com</li>
-                </ul>
-            </div>
-            <div class="footer-info">
-                <div>六角西餐廳</div>
-                <ul class="social-link">
-                </ul>
-            </div>
+            <ul>
+                <li>
+                    <h3>關於 六角西餐廳</h3>
+                    <p>Curabitur lobortis id lorem id bibndum. Ut id consectetur magna. Quisque volutpat augue enim, pulvinar lobortis nibh lacinia at.</p>
+                </li>
+                <li>
+                    <h3>聯絡方式</h3>
+                    <ul>
+                        <li>高雄市中正五路到底</li>
+                        <li>+886 886 886</li>
+                        <li>service@hexschool.com</li>
+                    </ul>
+                </li>
+                <li>
+                    <div>六角西餐廳</div>
+                    <!-- 內容由 js 新增 -->
+                    <ul class="social-link"></ul>
+                </li>
+            </ul>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

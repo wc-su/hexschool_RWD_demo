@@ -52,11 +52,91 @@ $(document).ready(function () {
         }
         
         // 視窗大小改變就把 選單 關閉、將 top 位置還原
-        if($(".header-bar").hasClass('nav-menu-open')){
-            $(".nav-menu").parent().removeClass('nav-menu-open');
-            $(".back-to-top").parent().removeClass('nac-menu-open-t');
-        }
+        $(".container").removeClass('header-menu-open');
     });
+    
+    // 回到頂端 特效
+    $(".back-to-top").click(function (e) { 
+        e.preventDefault();
+        $('html, body').animate({scrollTop: 0}, 800);
+    });
+    
+    // 手機模式下 header選單
+    $(".header-menu-icon").on('click', function () {
+        $(".container").addClass('header-menu-open');
+    });
+    $(".header-menu-close-icon").on('click', function () {
+        $(".container").removeClass('header-menu-open');
+    });
+    
+    // footer 社群圖片
+    var socialImages = [
+        'google-plus-logo.png', 'twitter-logo.png', 'fb-logo.png'
+    ];
+    $.each(socialImages, function(index, value){
+        var name = value.split('.');
+        $(".social-link").append(
+            '<li><a href="#" class="' + name[0] + '")></a></li>'
+        );
+        var aLink = $("." + name[0]);
+        aLink.css('background-image', "url(img/" + value + ")");
+    });
+    switch(window.document.title.substr(0, 2)){
+        case '首頁':
+            // 選單 點擊事件
+            $(".header-menu-home > a").on('click', function (e) {
+                e.preventDefault();
+                $(this).toggleClass('header-menu-li-active');
+                $(".header-menu-home-droplist").stop().slideToggle();
+                $(".header-menu-home").toggleClass('header-menu-active');
+            });
+            // home 顯示 i 標記
+            $(".header-menu-home").children('i').css('display', 'block');
+            // home 點擊事件
+            $(".header-menu-home-droplist > li > a").on('click', function (e) {
+                $(".header-menu-home").children('a').removeClass('header-menu-li-active');
+                $(".header-menu-home-droplist").stop().slideUp();
+                $(".header-menu-home").removeClass('header-menu-active');
+                // 手機模式下 選單
+                if(windowWidth <= 568){
+                    $(".container").removeClass('header-menu-open');
+                }
+            });
+
+            // 首頁 到目標錨點 特效
+            $('.scrollTarget').click(function(e){
+                e.preventDefault();
+                var target = $(this).attr('href');
+                var targetPos = $(target).offset().top;
+                $('html, body').animate({scrollTop: targetPos}, 800);
+            });
+            
+            // 亂數新增 translateY 參數 及 動畫效果
+            $('.animated').each(function(){
+                var randomNum = (Math.floor(Math.random() * 50) + 50);
+                $(this).css('transform', 'translateY(' + randomNum + 'px)');
+            });
+            break;
+        case '商店':
+            var imgContent = 2;
+            // 圖片設定
+            if(windowWidth <= 568){
+                $(".product-container img").each(function (index, element) {
+                    changeImg(this, 1);
+                });
+            }
+            // 購物車選單
+            $(".cart-item li").on('click', function(e) {
+                e.preventDefault();
+                $(".cart-item li").removeClass("cart-item-active");
+                $(this).addClass("cart-item-active");
+            });
+            // 購物車選單 加入最愛 特效
+            $('.heart-img').on('click', function() {
+                $(this).toggleClass("heart-img-active");
+            });
+            break;
+    }
     function changeImg(element, way){
         $(element).each(function (e) {
             var src = $(this).attr('src');
@@ -71,92 +151,5 @@ $(document).ready(function () {
         });
         imgSizeOk = true;
     }
-    
-    // 回到頂端 特效
-    $(".back-to-top").click(function (e) { 
-        e.preventDefault();
-        $('html, body').animate({scrollTop: 0}, 800);
-    });
-    
-    // 手機模式下 選單
-    $(".header-bar-m").on('click', function () {
-        $(".nav-menu").parent().addClass('nav-menu-open');
-        $(".back-to-top").parent().addClass('nac-menu-open-t');
-    });
-    $(".header-bar-m-close").on('click', function () {
-        $(".nav-menu").parent().removeClass('nav-menu-open');
-        $(".back-to-top").parent().removeClass('nac-menu-open-t');
-    });
-    
-    // footer 社群圖片
-    var socialImages = [
-        'google-plus-logo.png', 'twitter-logo.png', 'fb-logo.png'
-    ];
-    $.each(socialImages, function(index, value){
-        var name = value.split('.');
-        $(".social-link").append(
-            '<li><a href="#" class="' + name[0] + '")></a></li>'
-            );
-            var aLink = $("." + name[0]);
-            aLink.css('background-image', "url(img/" + value + ")");
-    });
-        
-    // 首頁 頁面
-    if(window.document.title.substr(0, 2) == '首頁'){
-        // 選單 點擊事件
-        $(".nav-item-home > a").on('click', function (e) {
-            e.preventDefault();
-            $(this).toggleClass('nav-item-active');
-            $(".nav-item-h-list").stop().slideToggle();
-            $(".nav-item-home").toggleClass('nav-menu-i-active');
-        });
-        // home 顯示 i 標記
-        $(".nav-item-home").children('i').css('display', 'block');
-        // home 點擊事件
-        $(".nav-item-h-list > li > a").on('click', function (e) {
-            $(".nav-item-home").children('a').removeClass('nav-item-active');
-            $(".nav-item-h-list").stop().slideUp();
-            $(".nav-item-home").removeClass('nav-menu-i-active');
-            // 手機模式下 選單
-            if(windowWidth <= 568){
-                $(".nav-menu").css('transform', 'translateX(130%)');
-                $(".back-to-top").css('right', 'calc(10px)');
-            }
-        });
-        
-        // 首頁 到目標錨點 特效
-        $('.scrollTarget').click(function(e){
-            e.preventDefault();
-            var target = $(this).attr('href');
-            var targetPos = $(target).offset().top;
-            $('html, body').animate({scrollTop: targetPos}, 800);
-        });
-        
-        // 亂數新增 translateY 參數 及 動畫效果
-        $('.animated').each(function(){
-            var randomNum = (Math.floor(Math.random() * 50) + 50);
-            $(this).css('transform', 'translateY(' + randomNum + 'px)');
-        });
-    }
-    
-    // 商店 頁面
-    if(window.document.title.substr(0, 2) == '商店'){
-        var imgContent = 2;
-        // 圖片設定
-        if(windowWidth <= 568){
-            $(".product-container img").each(function (index, element) {
-                changeImg(this, 1);
-            });
-        }
-        // 購物車選單
-        $(".cart-item li a").on('click', function(e) {
-            e.preventDefault();
-            $(".cart-item li").removeClass("cart-item-active");
-            $(this).parent().addClass("cart-item-active");
-        });
-        // 購物車選單 加入最愛 特效
-        $('.heart-img').on('click', function() {
-            $(this).toggleClass("heart-img-active");
-        });
-    }
 });
+        

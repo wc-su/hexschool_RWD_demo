@@ -2,10 +2,10 @@
     background: #EFE9E7;
     color: #3D1101;
     padding: 50px 0;
-    .login-title, h3 {
+    h2, h3 {
         text-align: center;
     }
-    .login-title {
+    h2 {
         font-family: 'Noto Sans TC';
         font-weight: 900;
         font-size: 48px;
@@ -20,7 +20,6 @@
         width: 300px;
         border-top: 3px solid #FF5E45;
         box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.16);
-        position: relative;
         padding: 15px;
         margin: 0 auto;
         h4{
@@ -31,15 +30,14 @@
         }
         label{
             display: inline-block;
-            font-size: 16px;
             margin-bottom: 5px;
         }
         input[type='email'], input[type='text']{
-            width: 95%;
+            width: 100%;
             background: #FFFFFF;
             border: 1px solid #CCCCCC;
             border-radius: 3px;
-            box-shadow: inset 0px 1px 0px 0px #ECECEC;
+            box-shadow: 0px 1px 0px 0px #ECECEC;
             padding: 10px 9px 10px 27px;
         }
         input[type='email']{
@@ -48,24 +46,22 @@
         input[type='text']{
             margin-bottom: 3px;
         }
-        .forget-password{
+        a.forget-password{
             display: block;
             font-size: 14px;
             color: #FF5E45;
             margin-bottom: 30px;
         }
-        .btn{
+        .login-btn{
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            width: 95%;
-            .register, input[type='submit']{
+            a, input[type='submit']{
                 font-size: 14px;
                 color: #FFFFFF;
                 border-radius: 3px;
             }
-            .register{
-                display: inline-block;
+            a{
+                display: block;
                 background: rgba(0, 0, 0, 0.35);
                 padding: 11.5px 48.5px;
             }
