@@ -65,8 +65,15 @@ $(document).ready(function () {
     $(".header-menu-icon").on('click', function () {
         $(".container").addClass('header-menu-open');
     });
-    $(".header-menu-close-icon").on('click', function () {
-        $(".container").removeClass('header-menu-open');
+    $(".header-menu").on('click', function (e) {
+        var endX = windowWidth - 15;
+        var startX = endX - 24;
+        var startY = 13;
+        var endY = startY + 24;
+        if(e.clientX >= startX && e.clientX <= endX &&
+            e.clientY >= startY && e.clientY <= endY){
+            $(".container").removeClass('header-menu-open');
+        }
     });
     
     // footer 社群圖片

@@ -32,12 +32,13 @@
         <i class="fas fa-chevron-circle-up back-to-top"></i>
         <div class="header">
             <div class="header-bar">
-                <a href="index.html" class="header-logo">六角西餐廳</a>
+                <h2>
+                    <a href="index.html" class="header-logo">六角西餐廳</a>
+                </h2>
                 <i class="fas fa-bars header-menu-icon"></i>
                 <ul class="header-menu">
-                    <i class="far fa-times-circle header-menu-close-icon"></i>
                     <li class="header-menu-home">
-                        <i class="fas fa-sort-up"></i>
+                        <i class="fas fa-sort-up header-menu-tag"></i>
                         <a href="index.html">首頁</a>
                         <ul class="header-menu-home-droplist">
                             <li><a href="#feature" class="scrollTarget">特色</a></li>
@@ -62,11 +63,9 @@
         </div>
         <div class="main">
             <div class="feature" id="feature">
-                <div class="feature-title">
-                    <div class="line"></div>
-                    <h3>客人總是在詢問<br/>這麼好吃的秘訣是什麼</h3>
-                    <div class="line"></div>
-                </div>
+                <h3>
+                    <span>客人總是在詢問<br/>這麼好吃的秘訣是什麼</span>
+                </h3>
                 <ul class="feature-list">
                     <li class="feature-item animated">
                         <img src="img/feature_1.png" alt="feature_1">
@@ -95,32 +94,32 @@
             </div>
             <div class="opinion" id="opinion">
                 <h2>聽聽別人的感想</h2>
-                <div class="opinion-list">
-                    <div class="opinion-item animated">
+                <ul class="opinion-list">
+                    <li class="opinion-item animated">
                         <img src="img/avatar_1.png" alt="avatar_1">
                         <div class="opinion-msg">
                             <h4>高雄一口吃</h4>
                             <p>自從吃了這家餐廳以後，我口水連續流了一個多月都沒停，下次不要再被我遇到，不然我一定連他們桌子都啃下去。</p>
                             <p class="opinion-nickname"> -- 產品經理</p>
                         </div>
-                    </div>
-                    <div class="opinion-item animated">
+                    </li>
+                    <li class="opinion-item animated">
                         <img src="img/avatar_2.png" alt="avatar_2">
                         <div class="opinion-msg">
                             <h4>廟口小霸王</h4>
                             <p>自從吃了這家餐廳以後，我口水連續流了一個多月都沒停，下次不要再被我遇到，不然我一定連他們桌子都啃下去。</p>
                             <p class="opinion-nickname"> -- 金身道士</p>
                         </div>
-                    </div>
-                    <div class="opinion-item animated">
+                    </li>
+                    <li class="opinion-item animated">
                         <img src="img/avatar_3.png" alt="avatar_3">
                         <div class="opinion-msg">
                             <h4>春天也來了</h4>
                             <p>自從吃了這家餐廳以後，我口水連續流了一個多月都沒停，下次不要再被我遇到，不然我一定連他們桌子都啃下去。</p>
                             <p class="opinion-nickname"> -- 美麗萬分</p>
                         </div>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
             <div class="location" id="location">
                 <h2>我們的位置不太夠坐<br/>要不要先定位呢？</h2>
@@ -136,12 +135,12 @@
                             <input type="email" name="email" id="email" placeholder="test@gmail.com">
                             <label for="count">人數</label>
                             <input type="number" name="count" id="count">
-                            <label for="veggie">是否需要素食</label>
+                            <label>是否需要素食</label>
                             <div>
-                                <label for="radio">是</label>
-                                <input type="radio" name="veggie" id="veggie_yes" value="veggie_yes">
-                                <label for="radio">否</label>
-                                <input type="radio" name="veggie" id="veggie_no" value="veggie_no">
+                                <label for="veggie-yes">是</label>
+                                <input type="radio" name="veggie" id="veggie-yes" value="veggie_yes">
+                                <label for="veggie-no">否</label>
+                                <input type="radio" name="veggie" id="veggie-no" value="veggie_no">
                             </div>
                         </div>
                         <div class="form-btn">
@@ -152,27 +151,25 @@
                 </div>
             </div>
         </div>
-        <div class="footer">
-            <ul>
-                <li>
-                    <h3>關於 六角西餐廳</h3>
-                    <p>Curabitur lobortis id lorem id bibndum. Ut id consectetur magna. Quisque volutpat augue enim, pulvinar lobortis nibh lacinia at.</p>
-                </li>
-                <li>
-                    <h3>聯絡方式</h3>
-                    <ul>
-                        <li>高雄市中正五路到底</li>
-                        <li>+886 886 886</li>
-                        <li>service@hexschool.com</li>
-                    </ul>
-                </li>
-                <li>
-                    <div>六角西餐廳</div>
-                    <!-- 內容由 js 新增 -->
-                    <ul class="social-link"></ul>
-                </li>
-            </ul>
-        </div>
+        <ul class="footer">
+            <li>
+                <h3>關於 六角西餐廳</h3>
+                <p>Curabitur lobortis id lorem id bibndum. Ut id consectetur magna. Quisque volutpat augue enim, pulvinar lobortis nibh lacinia at.</p>
+            </li>
+            <li>
+                <h3>聯絡方式</h3>
+                <ul class="footer-contact">
+                    <li>高雄市中正五路到底</li>
+                    <li><a href="tel:+886 886 886">+886 886 886</a></li>
+                    <li><a href="mailto:service@hexschool.com">service@hexschool.com</a></li>
+                </ul>
+            </li>
+            <li>
+                <div>六角西餐廳</div>
+                <!-- 內容由 js 新增 -->
+                <ul class="social-link"></ul>
+            </li>
+        </ul>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/all.js"></script>

@@ -129,6 +129,7 @@ h4 {
 
 .back-to-top:hover {
   cursor: pointer;
+  opacity: 0.6;
 }
 
 @media (max-width: 1000px) {
@@ -163,6 +164,7 @@ h4 {
 }
 
 .header .header-bar .header-logo {
+  display: block;
   background: url(../img/logo_w.png) no-repeat center center;
   background-size: contain;
   width: 120px;
@@ -188,7 +190,7 @@ h4 {
   border-radius: 10px;
 }
 
-.header .header-bar .header-menu li i {
+.header .header-bar .header-menu li .header-menu-tag {
   position: absolute;
   bottom: -10px;
   left: 50%;
@@ -311,7 +313,8 @@ h4 {
     border-radius: 5px 0 0 5px;
     z-index: 50;
   }
-  .header .header-bar .header-menu .header-menu-close-icon {
+  .header .header-bar .header-menu::before {
+    content: "\f057";
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -319,6 +322,8 @@ h4 {
         -ms-flex-pack: end;
             justify-content: flex-end;
     font-size: 24px;
+    font-family: "Font Awesome 5 Free";
+    color: white;
     padding: 13px 15px;
   }
   .header .header-bar .header-menu .header-menu-home i {
@@ -356,7 +361,7 @@ h4 {
   }
 }
 
-.footer ul {
+.footer {
   color: #3D1101;
   background: #efeae7;
   display: -webkit-box;
@@ -368,34 +373,33 @@ h4 {
   padding: 50px 42px;
 }
 
-.footer ul li {
+.footer li {
   width: 31.33%;
   margin: 0 1%;
 }
 
-.footer ul li h3 {
+.footer li h3 {
   margin-bottom: 16px;
 }
 
-.footer ul li p {
+.footer li p {
   line-height: 1.4;
 }
 
 @media (max-width: 768px) {
-  .footer ul li p {
+  .footer li p {
     font-size: 14px;
   }
 }
 
-.footer ul li ul {
+.footer li .footer-contact {
   width: 100%;
   display: block;
   list-style: disc;
-  margin-left: 24px;
-  padding: 0;
+  padding-left: 24px;
 }
 
-.footer ul li ul li {
+.footer li .footer-contact li {
   width: 100%;
   font-size: 16px;
   line-height: 1.4;
@@ -403,12 +407,17 @@ h4 {
 }
 
 @media (max-width: 768px) {
-  .footer ul li ul li {
+  .footer li .footer-contact li {
     font-size: 14px;
   }
 }
 
-.footer ul li div {
+.footer li .footer-contact li a {
+  text-decoration: none;
+  color: #3D1101;
+}
+
+.footer li div {
   font-family: 'Noto Sans TC';
   font-weight: 900;
   font-size: 50px;
@@ -418,18 +427,18 @@ h4 {
 }
 
 @media (max-width: 1000px) {
-  .footer ul li div {
+  .footer li div {
     font-size: 5vw;
   }
 }
 
 @media (max-width: 568px) {
-  .footer ul li div {
+  .footer li div {
     font-size: 50px;
   }
 }
 
-.footer ul li .social-link {
+.footer li .social-link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -443,14 +452,14 @@ h4 {
   margin: 0;
 }
 
-.footer ul li .social-link li {
+.footer li .social-link li {
   display: block;
   line-height: 0;
   width: 12%;
   margin: 0 1%;
 }
 
-.footer ul li .social-link li a {
+.footer li .social-link li a {
   display: block;
   width: 100%;
   border-radius: 5px;
@@ -460,8 +469,12 @@ h4 {
   padding-bottom: 100%;
 }
 
+.footer li .social-link li a:hover {
+  opacity: 0.5;
+}
+
 @media (max-width: 568px) {
-  .footer ul {
+  .footer {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -471,11 +484,11 @@ h4 {
             align-items: center;
     padding: 50px 1%;
   }
-  .footer ul li {
+  .footer li {
     width: 90%;
     margin: 15px 1%;
   }
-  .footer ul li .social-link {
+  .footer li .social-link {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -513,28 +526,32 @@ h4 {
   padding: 50px 32px;
 }
 
-.main .feature .feature-title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.main .feature h3 {
+  text-align: center;
 }
 
-.main .feature .feature-title h3 {
+.main .feature h3 span {
   font-weight: bold;
   text-align: center;
   line-height: 1.6;
   margin: 0 5px;
+  position: relative;
 }
 
-.main .feature .feature-title .line {
+.main .feature h3 span::before, .main .feature h3 span::after {
+  content: "";
   border-bottom: 1px solid #979797;
-  width: 12%;
+  width: 70%;
+  position: absolute;
+  top: 50%;
+}
+
+.main .feature h3 span::before {
+  left: -100%;
+}
+
+.main .feature h3 span::after {
+  right: -80%;
 }
 
 .main .feature .feature-list {
@@ -577,8 +594,8 @@ h4 {
 }
 
 @media (max-width: 568px) {
-  .main .feature .feature-title .line {
-    width: 8%;
+  .main .feature h3 span::before, .main .feature h3 span::after {
+    display: none;
   }
   .main .feature .feature-list {
     -webkit-box-orient: vertical;
@@ -841,6 +858,7 @@ h4 {
 
 .main .location .location-input form .form-btn input:hover {
   cursor: pointer;
+  opacity: 0.5;
 }
 
 @media (max-width: 568px) {
@@ -910,7 +928,7 @@ h4 {
   margin-bottom: 5px;
 }
 
-.login .login-info input[type='email'], .login .login-info input[type='text'] {
+.login .login-info input[type='email'], .login .login-info input[type='password'] {
   width: 100%;
   background: #FFFFFF;
   border: 1px solid #CCCCCC;
@@ -924,7 +942,7 @@ h4 {
   margin-bottom: 15px;
 }
 
-.login .login-info input[type='text'] {
+.login .login-info input[type='password'] {
   margin-bottom: 3px;
 }
 
@@ -948,6 +966,10 @@ h4 {
   font-size: 14px;
   color: #FFFFFF;
   border-radius: 3px;
+}
+
+.login .login-info .login-btn a:hover, .login .login-info .login-btn input[type='submit']:hover {
+  opacity: 0.6;
 }
 
 .login .login-info .login-btn a {
@@ -1031,7 +1053,7 @@ h4 {
   margin-bottom: 5px;
 }
 
-.register .register-info-outer .register-info .register-info-input input[type='email'], .register .register-info-outer .register-info .register-info-input input[type='text'] {
+.register .register-info-outer .register-info .register-info-input input[type='email'], .register .register-info-outer .register-info .register-info-input input[type='password'] {
   width: 100%;
   background: #FFFFFF;
   border: 1px solid #CCCCCC;
@@ -1045,7 +1067,7 @@ h4 {
   margin-bottom: 15px;
 }
 
-.register .register-info-outer .register-info .register-info-input input[type='text'] {
+.register .register-info-outer .register-info .register-info-input input[type='password'] {
   margin-bottom: 3px;
 }
 
@@ -1076,6 +1098,7 @@ h4 {
 
 .register .register-info-outer .register-info .register-info-input .register-btn input[type='submit']:hover {
   cursor: pointer;
+  opacity: 0.6;
 }
 
 @media (max-width: 768px) {

@@ -32,7 +32,7 @@
             display: inline-block;
             margin-bottom: 5px;
         }
-        input[type='email'], input[type='text']{
+        input[type='email'], input[type='password']{
             width: 100%;
             background: #FFFFFF;
             border: 1px solid #CCCCCC;
@@ -43,7 +43,7 @@
         input[type='email']{
             margin-bottom: 15px;
         }
-        input[type='text']{
+        input[type='password']{
             margin-bottom: 3px;
         }
         a.forget-password{
@@ -59,6 +59,9 @@
                 font-size: 14px;
                 color: #FFFFFF;
                 border-radius: 3px;
+                &:hover {
+                    opacity: 0.6;
+                }
             }
             a{
                 display: block;

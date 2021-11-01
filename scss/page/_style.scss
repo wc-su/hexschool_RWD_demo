@@ -4,19 +4,27 @@
         color: #3D1101;
         background: #efeae7;
         padding: 50px 32px;
-        .feature-title {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            h3 {
+        h3 {
+            text-align: center;
+            span{
                 font-weight: bold;
                 text-align: center;
                 line-height: 1.6;
                 margin: 0 5px;
-            }
-            .line {
-                border-bottom: 1px solid #979797;
-                width: 12%;
+                position: relative;
+                &::before, &::after {
+                    content: "";
+                    border-bottom: 1px solid #979797;
+                    width: 70%;
+                    position: absolute;
+                    top: 50%;
+                }
+                &::before {
+                    left: -100%;
+                }
+                &::after {
+                    right: -80%;
+                }
             }
         }
         .feature-list{
@@ -43,9 +51,9 @@
             }
         }
         @include mobile(){
-            .feature-title {
-                .line {
-                    width: 8%;
+            h3 {
+                span::before, span::after {
+                    display: none;
                 }
             }
             .feature-list{
@@ -222,6 +230,7 @@
                         }
                         &:hover{
                             cursor: pointer;
+                            opacity: 0.5;
                         }
                     }
                 }

@@ -50,3 +50,21 @@ table {
 a{
 	text-decoration: none;
 }
+
+img{
+	max-width: 100%;
+	height: auto;
+}
+
+*,*::before,*::after{
+	box-sizing: border-box;
+}
+
+// 移除 apple 設定
+input {
+	border-radius: 0;
+}
+
+input[type="search"] {
+	-webkit-appearance: none;
+}
