@@ -429,6 +429,11 @@ h4 {
   color: #3D1101;
 }
 
+.footer li .footer-contact li a:hover {
+  color: blue;
+  text-decoration: underline;
+}
+
 .footer li div {
   font-family: 'Noto Sans TC';
   font-weight: 900;
